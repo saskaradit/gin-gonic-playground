@@ -5,5 +5,10 @@
 [GIN-debug] GET    /videos                   --> main.main.func1 (6 handlers)
 [GIN-debug] POST   /videos                   --> main.main.func2 (6 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-[GIN] 2021/02/14 - 16:04:30 | 200 |     129.751µs |             ::1 | GET      "/videos"
-::1 -  [Sun, 14 Feb 2021 16:04:30 WIB] GET /videos 200 641.319µs 
+::1 -  [Mon, 15 Feb 2021 06:54:20 WIB] POST /videos 401 9.169µs 
+[GIN] 2021/02/15 - 06:54:29 | 400 |     298.566µs |             ::1 | POST     "/videos"
+::1 -  [Mon, 15 Feb 2021 06:54:29 WIB] POST /videos 400 604.777µs 
+[GIN] 2021/02/15 - 06:54:36 | 400 |      54.104µs |             ::1 | POST     "/videos"
+::1 -  [Mon, 15 Feb 2021 06:54:36 WIB] POST /videos 400 241.464µs 
+[GIN] 2021/02/15 - 06:54:42 | 200 |     111.048µs |             ::1 | POST     "/videos"
+::1 -  [Mon, 15 Feb 2021 06:54:42 WIB] POST /videos 200 312.975µs 

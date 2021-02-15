@@ -5,6 +5,7 @@ import (
 	"gin-gonic/middlewares"
 	"gin-gonic/service"
 	"io"
+	"net/http"
 	"os"
 
 	"github.com/gin-gonic/gin"
@@ -36,7 +37,12 @@ func main() {
 	})
 
 	server.POST("/videos", func(ctx *gin.Context) {
-		ctx.JSON(200, videoController.Save(ctx))
+		err := videoController.Save(ctx)
+		if err != nil {
+			ctx.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
+		} else {
+			ctx.JSON(200, gin.H{"message": "Validated"})
+		}
 	})
 
 	server.Run(":8080")
