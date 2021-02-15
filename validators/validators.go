@@ -3,9 +3,10 @@ package validators
 import (
 	"strings"
 
-	"github.com/go-playground/validator/v10"
+	"gopkg.in/go-playground/validator.v9"
 )
 
-func ValidateCoolTitle(field validator.FieldLevel) bool {
-	return strings.Contains(field.Field().String(), "Cool")
+// ValidateCoolTitle returns true when the field value contains the word "cool".
+func ValidateCoolTitle(fl validator.FieldLevel) bool {
+	return strings.Contains(fl.Field().String(), "Cool")
 }

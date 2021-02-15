@@ -2,13 +2,27 @@
  - using env:	export GIN_MODE=release
  - using code:	gin.SetMode(gin.ReleaseMode)
 
-[GIN-debug] GET    /videos                   --> main.main.func1 (6 handlers)
-[GIN-debug] POST   /videos                   --> main.main.func2 (6 handlers)
+[GIN-debug] GET    /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] HEAD   /css/*filepath            --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (1 handlers)
+[GIN-debug] Loaded HTML Templates (4): 
+	- header.html
+	- index.html
+	- 
+	- footer.html
+
+[GIN-debug] GET    /api/videos               --> main.main.func1 (6 handlers)
+[GIN-debug] POST   /api/videos               --> main.main.func2 (6 handlers)
+[GIN-debug] GET    /view/videos              --> gin-gonic/controller.VideoController.ShowAll-fm (6 handlers)
 [GIN-debug] Listening and serving HTTP on :8080
-::1 -  [Mon, 15 Feb 2021 06:54:20 WIB] POST /videos 401 9.169µs 
-[GIN] 2021/02/15 - 06:54:29 | 400 |     298.566µs |             ::1 | POST     "/videos"
-::1 -  [Mon, 15 Feb 2021 06:54:29 WIB] POST /videos 400 604.777µs 
-[GIN] 2021/02/15 - 06:54:36 | 400 |      54.104µs |             ::1 | POST     "/videos"
-::1 -  [Mon, 15 Feb 2021 06:54:36 WIB] POST /videos 400 241.464µs 
-[GIN] 2021/02/15 - 06:54:42 | 200 |     111.048µs |             ::1 | POST     "/videos"
-::1 -  [Mon, 15 Feb 2021 06:54:42 WIB] POST /videos 200 312.975µs 
+[GIN] 2021/02/15 - 13:55:57 | 404 |         179ns |             ::1 | POST     "/videos"
+::1 -  [Mon, 15 Feb 2021 13:55:57 WIB] POST /videos 404 59.435545ms 
+[GIN] 2021/02/15 - 13:56:08 | 400 |     293.333µs |             ::1 | POST     "/api/videos"
+::1 -  [Mon, 15 Feb 2021 13:56:08 WIB] POST /api/videos 400 467.518µs 
+[GIN] 2021/02/15 - 13:56:16 | 200 |      81.448µs |             ::1 | POST     "/api/videos"
+::1 -  [Mon, 15 Feb 2021 13:56:16 WIB] POST /api/videos 200 318.775µs 
+127.0.0.1 -  [Mon, 15 Feb 2021 13:56:50 WIB] GET /view/videos 401 30.271µs 
+[GIN] 2021/02/15 - 13:56:55 | 200 |   47.804559ms |       127.0.0.1 | GET      "/view/videos"
+127.0.0.1 -  [Mon, 15 Feb 2021 13:56:55 WIB] GET /view/videos 200 48.51435ms 
+127.0.0.1 -  [Mon, 15 Feb 2021 13:56:56 WIB] GET /favicon.ico 401 13.143µs 
+[GIN] 2021/02/15 - 13:56:56 | 404 |         183ns |       127.0.0.1 | GET      "/favicon.ico"
+127.0.0.1 -  [Mon, 15 Feb 2021 13:56:56 WIB] GET /favicon.ico 404 2.888161ms 
